@@ -7,72 +7,44 @@
     <title>Inicio de Sesión</title>
   </head>
   <body>
-<<<<<<< HEAD
-  <div class="banner">
-    <img src="img/banner2.jpg">    
-  </div>
-    
-    
   <div class="panelForm">
     <div class="divForm">
-      <h2>Iniciar Sesión</h2>
+      <h3>Iniciar Sesión</h3>      
       <form action="controlador/validar.php" method="post">
-          <legend>Hola</legend>
-          <input
-              type="email"
-              name="txtCorreo"
-              placeholder="Escriba su correo:"
-              required="required"
-          >
-          <br>
-          <input
-              type="password"
-              name="txtPass"
-              placeholder="Escriba su pass:"
-              required="required"
-          >
-          <br>
-          <input class="boton" 
-              type="submit"
-              name="btnIniciar"
-              value="Iniciar sesión"
-          >
-      </form>
-      <div id="subTitulos">
-        ¿Aún no creas tu cuenta?
-      </div>
-      <a href="registro.php">Registrarse</a>
-    </div>
-  </div>
-=======
-    <h1>Iniciar Sesión</h1>
-        <form action="controlador/validar.php" method="post">
-            <input
+            <legend>Nombre</legend>
+            <input class="texto" 
                 type="text"
                 name="txtNombre"
                 placeholder="Escriba su nombre:"
                 required="required"
             >
             <br>
-            <input
+            <legend>Contraseña</legend>
+            <input class="texto" 
                 type="password"
                 name="txtClave"
                 placeholder="Escriba su clave:"
                 required="required"
             >
             <br>
-            <input
+            <input class="boton" 
                 type="submit"
                 name="btnIniciar"
                 value="Iniciar sesión"
             >
         </form>
-        <div id="subTitulos">
-          si no esta registrado entrar
-        </div>
-        <a href="registro.php">aqui</a>
->>>>>>> d5bbb4421f30332c6beafc0188bf62031226a4a4
+        <legend>¿Aun no creas tu cuenta?</legend>                  
+        <a href="registro.php">Registrarse</a>
+      </div>
+    </div>
 
+  <div class="banner">
+    <img src="img/banner2.jpg">    
+  </div>
+    
+    
+  
+        
         <?php
         if(isset($_GET["m"])){
     $m = $_GET["m"];
@@ -92,5 +64,6 @@
               }
          ?>
 
+         
   </body>
 </html>
