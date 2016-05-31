@@ -39,6 +39,37 @@ class Data{
 
         }
         echo "</select>";
+      }
 
+      public function formularioCrear($action){
+          echo "<h3>Crear usuario</h3>";
+          echo "<form action='$action' method='post'>";
+              echo "<input type='text' name='txtNombre' placeholder='Nombre:'>";
+              echo "<br/>";
+              echo "<input type='text' name='txtApellido' placeholder='Appellido:'>";
+              echo "<br/>";
+              echo "<input type='nuber' name='txtRut' placeholder='Rut:'>";
+              echo "<br/>";
+              echo "<input type='password' name='txtClave' placeholder='Clave:'>";
+              echo "<br/>";
+              $this->cargarTipoAcceso();
+              echo "<br/>";
+              echo "<input type='submit' name='btnRegistrar' value='Registrar'>";
+          echo "</form>";
 
+          /*
+          if(isset($_POST["btnRegistrar"])){
+          require_once "bd/Data.php";
+
+          $nombre = $_POST["txtNombre"];
+          $apellido = $_POST["txtApellido"];
+          $rut = $_POST["txtRut"];
+          $clave = $_POST["txtClave"];
+          $tipoAcceso = $_POST["txtTipoAcceso"];
+          $privilegio = $_POST["cboPrivilegio"];
+
+          $d = new Data();
+          $d->crearUsuarioBasico($nombre, $apellido, $rut, $clave,$tipoAcceso);
+          */
+      }
  ?>
