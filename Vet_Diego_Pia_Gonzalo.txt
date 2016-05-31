@@ -1,0 +1,4 @@
+Nuestra idea es hacer un mini sistema de vacunacion, donde un usuario normal
+pueda ver las mascotas que se han vacunado en la veterinaria, cuantas vacunas tiene
+y cual es su veterinario de cabecera, el administrador puede ver todas las mascotas, y cada 
+veterinario puede ver y registrar nuevas mascotas que haya atendido.
