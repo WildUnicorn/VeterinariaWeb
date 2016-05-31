@@ -1,14 +1,11 @@
 
 .banner{
-    width: 20%;    
+    width: 50%;
     padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 50px;
+
     border-radius: 15px;
     border-image-width: 30px;
-    float: left;
-    align-self: center;
-
+    float: inherit;
 }
 
 .boton{
@@ -40,4 +37,3 @@ body{
     color: #333;
     margin: 3;
 }
-

@@ -9,10 +9,10 @@
   <body>
   <div class="panelForm">
     <div class="divForm">
-      <h3>Iniciar Sesión</h3>      
+      <h3>Iniciar Sesión</h3>
       <form action="controlador/validar.php" method="post">
             <legend>Nombre</legend>
-            <input class="texto" 
+            <input class="texto"
                 type="text"
                 name="txtNombre"
                 placeholder="Escriba su nombre:"
@@ -20,31 +20,19 @@
             >
             <br>
             <legend>Contraseña</legend>
-            <input class="texto" 
+            <input class="texto"
                 type="password"
                 name="txtClave"
                 placeholder="Escriba su clave:"
                 required="required"
             >
             <br>
-            <input class="boton" 
+            <input class="boton"
                 type="submit"
                 name="btnIniciar"
                 value="Iniciar sesión"
             >
         </form>
-        <legend>¿Aun no creas tu cuenta?</legend>                  
-        <a href="registro.php">Registrarse</a>
-      </div>
-    </div>
-
-  <div class="banner">
-    <img src="img/banner2.jpg">    
-  </div>
-    
-    
-  
-        
         <?php
         if(isset($_GET["m"])){
     $m = $_GET["m"];
@@ -63,7 +51,20 @@
                   }
               }
          ?>
+        <legend>¿Aun no creas tu cuenta?</legend>
+        <a href="registro.php">Registrarse</a>
+      </div>
+    </div>
 
-         
+  <div class="banner">
+    <img src="img/banner2.jpg">
+  </div>
+
+
+
+
+
+
+
   </body>
 </html>
