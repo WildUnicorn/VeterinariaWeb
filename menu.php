@@ -21,6 +21,22 @@ if(!isset($_SESSION["idtipoAcceso"])){
     <title>Menu</title>
   </head>
   <body>
+    <div id="TituloMenu"> Bienvenidos  <?php echo "$nombre"; ?></div>
+    <?php
+    require_once("bd/Data.php");
+    $d = new Data();
 
+    switch ($idtipoAcceso) {
+        case 1:
+            echo "<h3>Administrador</h3>";
+            break;
+        case 2:
+            echo "<h3>Veterinario</h3>";
+            break;
+        case 3:
+          echo "<h3>Dueño</h3>";
+          break;
+    }
+    ?>
   </body>
 </html>
