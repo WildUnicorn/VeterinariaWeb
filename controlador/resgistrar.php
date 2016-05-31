@@ -1,3 +1,6 @@
+
+?>
+
 <?php
 if(isset($_POST["btnRegistrar"])){
 require_once "../bd/Data.php";
