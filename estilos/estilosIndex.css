@@ -1,0 +1,76 @@
+element.style {
+}
+
+.banner{
+    width: 75%;
+    
+    padding-top: 15px;
+    border-radius: 15px;
+    border-image-width: 30px;
+    float: left;
+
+}
+
+
+
+
+.divForm{
+    border: 2px solid green;
+    border-radius: 4px;
+}
+.boton{
+
+    border-radius: 5px;
+}
+
+
+.panelForm{
+    align-content: inherit;
+    float: right;
+}
+
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    
+}
+body {
+    margin: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+Inherited from html
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+Pseudo ::before element
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
