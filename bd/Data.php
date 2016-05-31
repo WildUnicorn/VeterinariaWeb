@@ -14,17 +14,31 @@ class Data{
         );
     }
 
-    public function crearUsuarioBasico($nombre, $apellido, $rut, $pass,$tipoAcceso){
+    public function crearUsuarioBasico($nombre, $apellido, $rut, $clave,$tipoAcceso){
         $q = "insert into usuario
             values (null,
                 '$correo',
                 '$apellido',
                 '$rut',
-                '$pass',
+                '$clave',
                 '$tipoAcceso');";
 
         $this->c->ejecutar($q);
     }
+
+    public function cargarTipoAcceso(){
+        $q = "select * from tipoAcceso";
+
+        $rs = $this->c->ejecutar($q);
+
+        echo "<select name='cboPrivilegio'>";
+        while($reg = mysql_fetch_array($rs)){
+            $id = $reg[0];
+            $acceso = $reg[1];
+            echo "<option value='$id'>$acceso</option>";
+
+        }
+        echo "</select>";
 
 
  ?>

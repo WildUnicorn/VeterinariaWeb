@@ -7,15 +7,6 @@ class Usuario{
     public $clave;
     public $tipoAcceso// FK (ID)
 
-    //*
-    id auto_increment,
-     nombre varchar (20),
-     apellido varchar (20),
-     rut varchar (12),
-     clave varchar (25),
-     tipoAcceso int,
-     primary key (id),
-     foreign key (tipoAcceso) references tipoAcceso(id)
-    *//
+
 }
 ?>
