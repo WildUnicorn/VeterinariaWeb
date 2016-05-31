@@ -6,7 +6,7 @@
 	<title>Bienvenido a PetVet</title>
 </head>
 <body>
-	<img src="">
+	<img src="img/banner1.jpg">
 
 </body>
 </html>

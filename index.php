@@ -7,6 +7,7 @@
     <title>Inicio de Sesión</title>
   </head>
   <body>
+<<<<<<< HEAD
   <div class="banner">
     <img src="img/banner2.jpg">    
   </div>
@@ -43,6 +44,53 @@
       <a href="registro.php">Registrarse</a>
     </div>
   </div>
+=======
+    <h1>Iniciar Sesión</h1>
+        <form action="controlador/validar.php" method="post">
+            <input
+                type="text"
+                name="txtNombre"
+                placeholder="Escriba su nombre:"
+                required="required"
+            >
+            <br>
+            <input
+                type="password"
+                name="txtClave"
+                placeholder="Escriba su clave:"
+                required="required"
+            >
+            <br>
+            <input
+                type="submit"
+                name="btnIniciar"
+                value="Iniciar sesión"
+            >
+        </form>
+        <div id="subTitulos">
+          si no esta registrado entrar
+        </div>
+        <a href="registro.php">aqui</a>
+>>>>>>> d5bbb4421f30332c6beafc0188bf62031226a4a4
+
+        <?php
+        if(isset($_GET["m"])){
+    $m = $_GET["m"];
+
+    switch($m) {
+        case 1:
+            echo "No debe entrar a validar!";
+            break;
+        case 2:
+            echo "Debe iniciar sesión para ver el menu";
+            break;
+        case 3:
+            echo "Datos erróneos";
+            break;
+
+                  }
+              }
+         ?>
 
   </body>
 </html>
