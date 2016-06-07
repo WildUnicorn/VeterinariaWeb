@@ -1,88 +1,71 @@
 create database veterinaria;
  use veterinaria;
 
- create table tipoAcceso(
-     id int auto_increment,
+  create table tipoAcceso(
+     id int not null auto_increment,
      acceso varchar (20),
      primary key (id)
  );
-
 insert into tipoAcceso values (null,'Administrador');
 insert into tipoAcceso values (null,'Medico Veterinario');
 insert into tipoAcceso values (null,'Dueño');
 
-create table propietario(
-id int auto_increment,
-rut varchar (12),
-nombre varchar (20),
-apellido varchar (20),
-telefono int,
-primary key (id)
-);
+ create table usuario(
+     id int not null auto_increment,
+     nombre varchar (20),
+     apellido varchar (20),
+     rut varchar (12),
+     clave varchar (25),
+     tipoAcceso int,
+     primary key (id),
+     foreign key (tipoAcceso) references tipoAcceso(id)
+ );
 
- insert into propietario values (null,'101-0','Maria Jose','Valdes',778899);
+
+ insert into usuario values (null,'Juan','Gomez','111-1','123456',1);
+ insert into usuario values (null,'Juana','Rojas','222-2','654321',2);
+ insert into usuario values (null,'Camila','Gonzalez','333-3','123456',2);
+ insert into usuario values (null,'Valeria','Flores','444-4','654321',2);
+ insert into usuario values (null,'Pedro','Fernandez','555-5','123456',2);
+ insert into usuario values (null,'Joaquin','Olivares','666-6','654321',2);
+ insert into usuario values (null,'Mauricio','Castillo','777-7','123456',2);
+ insert into usuario values (null,'Isidora','Castro','888-8','654321',2);
+ insert into usuario values (null,'Dania','Pereira','999-9','123456',2);
+
+
 
  create table mascota(
-     id int auto_increment,
+     id int not null auto_increment,
      nombre varchar (25),
      edad int,
      raza varchar (25),
      sexo varchar(15),
      vacunas int,
-     propietario int,
+     medico int,
      primary key (id),
-     foreign key (propietario) references propietario(id)
+     foreign key (medico) references usuario(id)
  );
 
- insert into mascota values (null,'boby',5,'Labrador','macho',2,1);
- insert into mascota values (null,'bobo',6,'dalmata','macho',6,1);
+ /**Elimiar mascota**/
+ delete from mascota
+ where id="";
+ /**Eliminar usuario**/
+ delete from usuario
+ where id="";
 
- create table medico(
-id int auto_increment,
-rut varchar (12),
-nombre varchar (20),
-apellido varchar (20),
-primary key (id)
-);
-
- insert into  medico values (null,'333-3','Camila','Gonzalez');
- insert into  medico values(null,'444-4','Valeria','Flores');
- insert into  medico values (null,'555-5','Pedro','Fernandez');
- insert into  medico values (null,'666-6','Joaquin','Olivares');
- insert into  medico values (null,'777-7','Mauricio','Castillo');
- insert into  medico values (null,'888-8','Isidora','Castro');
- insert into  medico values (null,'999-9','Dania','Pereira');
-
- create table administrador (
-	id int auto_increment,
-    rut varchar(12),
-    clave varchar (25),
-    primary key (id)
-);
-insert into administrador values (null,'111-1','123456');
-
-create table atencion(
-	id int auto_increment,
-    idMascota int,
-    idMedico int,
-    primary key (id),
-    foreign key (idMascota) references mascota (id),
-    foreign key (idMedico) references medico (id)
-);
-
-insert into atencion values (null,2,4);
+ /**Agregar mascota **/
+ insert into mascota values
+ (null,'Nombre','edad','raza','sexo','vacunas','medico');
 
 
-select * from mascota;
+ /**agregar usuario**/
+  insert into usuario values
+ (null,'nombre','apellido','rut','clave','Tipo acceso');
 
- select m.id, m.nombre, m.edad, m.raza, m.sexo, m.vacunas, p.nombre as 'propietario'
-                from mascota m, propietario p;
-                /*where m.id = 2;*/
+ /**buscar mascota**/
+ select m.id, m.nombre, m.edad, m.raza, m.sexo, m.vacunas,u.nombre  from mascota m,usuario u
+ where m.id='' or m.nombre='juana' and  m.medico = u.id ;
 
-select * from mascota;
-select * from medico;
-select * from atencion;
 
-select m.nombre as 'Mascota', m.edad, m.raza, m.sexo, m.vacunas, me.nombre 'Medico', a.id 'Numero Atencion'
-	from mascota m, medico me, atencion a
-    where m.id = 2 and me.id = 4;
+
+ /**buscar cliente por id**/
