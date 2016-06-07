@@ -7,7 +7,7 @@ if(isset($_POST["btnIniciar"])){
     $clave = $_POST["txtClave"];
 
     $d = new Data();
-    $idtipoAcceso = $d->getTipoAcceso($nombre, $clave);
+    $idtipoAcceso = $d->cargarTipoAcceso($nombre, $clave);
     $nombre = $d->getNombre($nombre, $clave);
 
     session_start();
