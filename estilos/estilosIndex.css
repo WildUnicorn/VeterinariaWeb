@@ -17,17 +17,6 @@ legend.aunNo{
   text-align: center;
 }
 
-.banner{
-    width: 50%;
-    padding-top: 15px;
-
-    border-radius: 15px;
-    border-image-width: 30px;
-    float: inherit;
-}
-
-
-
 .boton{
 
     border-radius: 5px;
@@ -49,8 +38,6 @@ body{
     color: #333;
     margin: 3;
 }
-
-
 h3{
   letter-spacing: 3px;
   text-align: center;
@@ -60,7 +47,7 @@ h3{
 .divForm{
     align-content: center;
     float: inherit;
-    border: 2px solid green;
+    border-image: url("img\fondo.png");
     border-radius: 4px;
     background-color: Bluesky;
 }
