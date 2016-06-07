@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="estilos/estilosIndex.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="utf-8">
     <title>Inicio de Sesión</title>
   </head>
   <body>
-  <div class="panelForm">
-    <div class="divForm">
-      <h3>Iniciar Sesión</h3>
-      <form action="controlador/validar.php" method="post">
-            <legend>Nombre</legend>
+    <div class="panelForm">
+      <div class="divForm">
+        <h3>Iniciar Sesión</h3>
+        <form action="controlador/validar.php" method="post">
+          <legend>Nombre</legend>
             <input class="texto"
-                type="text"
-                name="txtNombre"
-                placeholder="Escriba su nombre:"
-                required="required"
+              type="text"
+              name="txtNombre"
+              placeholder="Escriba su nombre:"
+              required="required"
             >
             <br>
             <legend>Contraseña</legend>
@@ -27,12 +28,15 @@
                 required="required"
             >
             <br>
-            <input class="boton"
+            <input style="cursor:pointer;" class="boton"
                 type="submit"
                 name="btnIniciar"
-                value="Iniciar sesión"
+                value="Iniciar Sesión"
             >
         </form>
+
+
+
         <?php
         if(isset($_GET["m"])){
     $m = $_GET["m"];
@@ -51,20 +55,10 @@
                   }
               }
          ?>
-        <legend>¿Aun no creas tu cuenta?</legend>
+        <legend class="aunNO">¿Aun no creas tu cuenta?</legend>
         <a href="registro.php">Registrarse</a>
       </div>
     </div>
-
-  <div class="banner">
-    <img src="img/banner2.jpg">
-  </div>
-
-
-
-
-
-
-
+    <h1>Clinica Vets</h1>
   </body>
 </html>

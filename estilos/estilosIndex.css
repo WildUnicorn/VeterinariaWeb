@@ -1,4 +1,22 @@
 
+/** Generated @ www.fontreactor.com **/
+@font-face {
+	font-family: 'Digital';
+    src:url('fonts\\original_Animaletters.woff');
+}
+h1{
+  font-face: "Digital";
+  letter-spacing: 4px;
+  padding-right: 20%;
+  float: none;
+  text-align: center;
+  font-weight: bolder;
+}
+
+legend.aunNo{
+  text-align: center;
+}
+
 .banner{
     width: 50%;
     padding-top: 15px;
@@ -8,25 +26,19 @@
     float: inherit;
 }
 
+
+
 .boton{
 
     border-radius: 5px;
     background-color: #33cc59;
 }
 
-.divForm{
-    float: inherit;
-    border: 2px solid green;
-    border-radius: 4px;
-}
-
-.panelForm{
-    align-self: left;
-    align-content: inherit;
-    float: left;
-}
-
 body {
+    background-image: url("C:\\xampp\\htdocs\\VeterinariaWeb\\img\\banner2.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center top;
     padding-bottom: 40px;
     color: #5a5a5a;
 }
@@ -36,4 +48,29 @@ body{
     line-height: 1.42857143;
     color: #333;
     margin: 3;
+}
+
+
+h3{
+  letter-spacing: 3px;
+  text-align: center;
+  text-shadow: 5px 2px 4px grey;
+}
+
+.divForm{
+    align-content: center;
+    float: inherit;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color: Bluesky;
+}
+
+.panelForm{
+    align-self: left;
+    align-content: center;
+    float: left;
+}
+
+a:hover{
+  color: red;
 }

@@ -17,6 +17,7 @@ if(!isset($_SESSION["idtipoAcceso"])){
 
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>Menu</title>
   </head>
