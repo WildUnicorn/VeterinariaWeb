@@ -2,6 +2,7 @@
 
 require_once "Conexion.php";
 
+
 class Data{
     private $c;
 
@@ -10,7 +11,7 @@ class Data{
             "localhost",
             "veterinaria",
             "root",
-            "123456"
+            ""
         );
     }
 
@@ -80,6 +81,18 @@ class Data{
 
       echo"</table>";
     }
+
+    public function buscarUsuario($nombre,$clave){
+        $q="select u.id, u.nombre, u.apellido, u.rut,
+         from usuario u
+         where u.nombre='$nombre' and u.clave = '$clave';";
+        $rs=$this->c->ejecutar($q);
+
+      while($reg = mysql_fetch_array($rs)){
+        return $reg[0];
+      }
+    }
+
     public function buscarMascotaPorMedico($filtro){
       $q="select m.id, m.nombre, m.edad, m.raza,
         m.sexo, m.vacunas,u.nombre
@@ -127,7 +140,14 @@ class Data{
       $this->c->ejecutar($q);
     }
 
+    public function cargarAccesoUsuario($nombre, $clave){
+      $q = "select tipoAcceso from usuario where nombre = '$nombre' and clave = '$clave'";
+      $rs = $this->c->ejecutar($q);
+      while($reg = mysql_fetch_array($rs)){
+        return $reg[0];
+      }
 
+      }
     public function cargarTipoAcceso(){
         $q = "select * from tipoAcceso";
 
@@ -158,22 +178,47 @@ class Data{
               echo "<br/>";
               echo "<input type='submit' name='btnRegistrar' value='Registrar'>";
           echo "</form>";
+    }
 
-          /*
-          if(isset($_POST["btnRegistrar"])){
-          require_once "bd/Data.php";
+    public function listarUsuarios (){
 
-          $nombre = $_POST["txtNombre"];
-          $apellido = $_POST["txtApellido"];
-          $rut = $_POST["txtRut"];
-          $clave = $_POST["txtClave"];
-          $tipoAcceso = $_POST["txtTipoAcceso"];
-          $privilegio = $_POST["cboPrivilegio"];
+  $q = "select u.id, u.nombre, u.apellido, u.rut t.nombre as 'acceso'
+    from usuario u,tipoAcceso t
+    order by u.nombre asc;";
 
-          $d = new Data();
-          $d->crearUsuarioBasico($nombre, $apellido, $rut, $clave,$tipoAcceso);
-          */
-      }
+    $rs=$this->c->ejecutar($q);
+    echo "<h1>Listado de usuarios</h1>";
+
+    echo "<table border = 1>";
+      echo "<tr>";
+        echo "<th> ID </th>";
+        echo "<th> Nombre </th>";
+        echo "<th> Apellido </th>";
+        echo "<th> Rut </th>";
+        echo "<th> Acceso </th>";
+        echo "<th> Eliminar </th>";
+      echo  "</tr>";
+
+
+    /*vectores o arreglos */
+    while ($reg = mysql_fetch_array($rs)){
+      echo "<tr>";
+        echo "<td> $reg[0] </td>";
+        echo "<td> $reg[1] </td>";
+        echo "<td> $reg[2] </td>";
+        echo "<td> $reg[3] </td>";
+        echo "<td> $reg[4] </td>";
+        echo "<td> $reg[5] </td>";
+        echo "<td> ";
+        /*Cuando envia datos por la url es por $_GET */
+          echo "<a href= 'controlador/eliminarUsuario.php?id=$reg[0]'>";
+            echo "Eliminar";
+          echo "</a>";
+        echo "</td>";
+      echo  "</tr>";
 
     }
- ?>
+      echo "</table>";
+    }
+  }
+?>

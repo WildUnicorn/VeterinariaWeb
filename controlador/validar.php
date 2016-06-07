@@ -6,16 +6,20 @@ if(isset($_POST["btnIniciar"])){
     $nombre = $_POST["txtNombre"];
     $clave = $_POST["txtClave"];
 
+
     $d = new Data();
-    $idtipoAcceso = $d->cargarTipoAcceso($nombre, $clave);
-    $nombre = $d->getNombre($nombre, $clave);
+    $idtipoAcceso = $d->cargarAccesoUsuario($nombre, $clave);
+    $nombre = $d->buscarUsuario($nombre, $clave);
 
     session_start();
     $_SESSION["idtipoAcceso"] = $idtipoAcceso;
     $_SESSION["nombre"] = $nombre;
 
+    //echo "Tipo Acceso: ".$idtipoAcceso;
+    //echo "Sesión:".$_SESSION["idtipoAcceso"];
     header("location: ../menu.php");
 }else{
-    header("location: ../index.php?m=1");
+
+  header("location: ../index.php?m=1");
 }
 ?>
